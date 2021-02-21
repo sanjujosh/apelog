@@ -1,6 +1,6 @@
 {
   "name": "apelog",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "description": "Simple but feature rich fast logger for apes, Get ship done quickly",
   "main": "index.js",
   "scripts": {

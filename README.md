@@ -57,6 +57,11 @@ log.setLogLevel('trace')
 const log = new Logger('backend-api').setLogLevel('error') // Will not print anything below error
 ```
 
+### Or completly turn off logging for modules
+```javascript
+log.setLogLevel('off')
+```
+
 ### Pass any number of arguments as logs
 ```javascript
 log.debug('You', 'can', 'add', 'multiple', 'args')
@@ -96,14 +101,15 @@ log.pp({
 ### Pass an options object, available options below
 ```javascript
 const log = new Logger('backend-api', { 
-  level: 'trace', // an alias of log.setLogLevel('trace') Default trace
-  throwOnError: false, // Exit when log.error() happens Default false
-  colorEntireLine: true // Color entire log line, default only meta info is colored
+  level: 'trace', // an alias of log.setLogLevel('trace') | Default trace
+  throwOnError: false, // Exit when log.error() happens | Default false
+  colorEntireLine: true // Color entire log line, | Default only meta info is colored
 })
 ```
 
 ## Benchmark
 I've tested this on a 10th gen i7 to log 10000 lines, not so bad for a aping library.
+
 PS: for reference, only pino is faster. but apelog is faster than log4j & winston (the only one i have tested)
 
 ```javascript
