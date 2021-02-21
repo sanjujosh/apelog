@@ -17,7 +17,7 @@ It does not do fancy things,but it does have the all core functionality that you
 
 ### Ape Mentality
 
-This is for the people who get things done fast, no time to learn the 1000s options availalbe for a logger or to mess around why logging isn't working. Apelog is really simple and you can easily hack to the core anyway you like. (Ive created this for Nodejs, haven't tested on browser)
+This is for the people who get things done fast, no time to learn the 1000s options availalbe for a logger or to mess around why logging isn't working. Apelog is really simple and you can easily hack to the core anyway you like. (Ive created this for Nodejs, but should work inside browser as well)
 
 ## Installation
 
