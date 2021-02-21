@@ -66,9 +66,9 @@ class Logger {
                 finalString = chalk[color](`${meta} ${logLine}`)
             }
 
-            // console.log(finalString) // for further extreme performance, write directly to stdout. (aware of the formatting tradeoffs)
+            console.log(finalString) // for further extreme performance, write directly to stdout. (aware of the formatting tradeoffs)
 
-            process.stdout.write(finalString + '\n');
+            // process.stdout.write(finalString + '\n');
 
         }
     }
