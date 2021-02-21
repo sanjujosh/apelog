@@ -1,0 +1,26 @@
+{
+  "name": "apelog",
+  "version": "0.0.2",
+  "description": "Simple but feature rich fast logger for apes, Get ship done quickly",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "log",
+    "logger",
+    "logging",
+    "loglevel",
+    "pretty",
+    "fast"
+  ],
+  "author": "Sanju A",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^4.1.0",
+    "fast-date-format": "^2.2.4",
+    "fast-safe-stringify": "^2.0.7",
+    "lodash": "^4.17.21",
+    "prettyjson": "^1.2.1"
+  }
+}
