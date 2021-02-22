@@ -1,29 +1,34 @@
 const Logger = require('./index')
+const log = new Logger('benchmark')
 
-const log = new Logger('backend-api', { 
-  level: 'trace',
-  throwOnError: false,
-  colorEntireLine: true
-})
+const Benchmark = require('benchmark');
+const suite = new Benchmark.Suite();
 
-const myCar = {
+const nestedObjt = {
     make: 'Ford',
     model: 'Mustang',
     year: 1969,
     good: 'yeah'
 };
 
-const start = new Date();
-const hrstart = process.hrtime();
+let results = []
 
-for (let i = 0; i < 10000; i++) {
-    // log.info('normal string') // 675ms
-    // log.info('You', 'can', 'add', 'multiple', 'args') //672ms
-    // log.debug('You', 'can', 'add', 'multiple', 'args', 'even an object', myCar) // 1086ms
-}
+suite
+  .add('normal string', function () {
+    log.info('normal string')
+  })
+  .add('Multiple args parse', function () {
+    log.info('You', 'can', 'add', 'multiple', 'args')
+  })
+  .add('Object stringify', function () {
+    log.info('You', 'can', 'add', 'multiple', 'args', 'even an object', nestedObjt)
+  })
+  .on('cycle', function (e) {
+    results.push(String(e.target))
+  })
+  .on('complete', function() {
+    console.log('Fastest is ' + this.filter('fastest').map('name'));
+  })
+  .run();
 
-const end = new Date() - start,
-hrend = process.hrtime(hrstart);
-console.info("Execution time: %dms", end);
-console.info("Execution time (hr): %ds %dms", hrend[0], hrend[1]/1000000);
-
+console.info(results)
