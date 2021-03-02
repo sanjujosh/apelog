@@ -1,6 +1,6 @@
 {
   "name": "apelog",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Simple but feature rich fast logger for apes, Get ship done quickly",
   "main": "index.js",
   "scripts": {
@@ -16,6 +16,14 @@
   ],
   "author": "Sanju A",
   "license": "ISC",
+  "homepage": "https://github.com/sanjujosh/apelog",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sanjujosh/apelog"
+  },
+  "bugs": {
+    "url": "https://github.com/sanjujosh/apelog/issues"
+  },
   "dependencies": {
     "chalk": "^4.1.0",
     "fast-date-format": "^2.2.4",
@@ -23,6 +31,12 @@
     "prettyjson": "^1.2.1"
   },
   "devDependencies": {
-    "benchmark": "^2.1.4"
+    "benchmark": "^2.1.4",
+    "eslint": "^7.21.0",
+    "eslint-config-standard": "^16.0.2",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.3.1",
+    "eslint-plugin-standard": "^5.0.0"
   }
 }
