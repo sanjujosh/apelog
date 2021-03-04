@@ -21,7 +21,7 @@ class Logger {
     this.name = name.toUpperCase()
     this.level = options.level || 'trace'
     this.throwOnError = options.throwOnError || false // Exit when error occures, be careful if you exit early not all errors are printed
-    this.colorEntireLine = options.colorEntireLine || true // color the entire log line, if set to false only meta will be colored
+    this.colorEntireLine = options.colorEntireLine || false // color the entire log line, if set to false only meta will be colored
     this.levels = ['trace', 'debug', 'info', 'warn', 'error', 'off']
     this.colors = ['grey', 'cyan', 'greenBright', 'yellowBright', 'red', 'grey']
   }
@@ -39,6 +39,11 @@ class Logger {
       let logLine = ''
 
       for (const msg of msgs) {
+        // Do not stringify Error instances
+        if (msg instanceof Error) {
+          logLine += '\n ' + msg.stack
+          continue
+        }
         if (typeof msg === 'object') {
           logLine += ' ' + safeStringify(msg)
           continue
@@ -57,7 +62,7 @@ class Logger {
 
       let finalString = chalk[color](meta) + `${logLine}`
 
-      if (!this.colorEntireLine) {
+      if (this.colorEntireLine) {
         finalString = chalk[color](`${meta} ${logLine}`)
       }
 
